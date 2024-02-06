@@ -212,15 +212,14 @@
         navigator.mediaDevices.getUserMedia({ video: { facingMode: frontCamera ? 'user' : 'environment' } })
             .then((s) => {
                 stream = s;
-                cameraStream.srcObject.dd = stream;
-                modal.style.display.d = 'flex';
+                cameraStream.srcObject = stream;
+                modal.style.display = 'flex';
             })
             .catch((err) => {
-                let string = err.message;
-                console.log('Error log accessing the camera: ', err);
-                console.error('Error accessing the camera: ', err);
-                console.log("Error.meeage",string)
-                console.log(string)
+                console.log(err);
+                console.log(err.name);
+                console.log(err.stack)
+                console.log(err.message)
 
             });
     }
