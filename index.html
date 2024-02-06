@@ -216,7 +216,10 @@
                 modal.style.display = 'flex';
             })
             .catch((err) => {
+                console.log('Error log accessing the camera: ', err);
                 console.error('Error accessing the camera: ', err);
+                console.log("Error.meeage",err.message)
+
             });
     }
 
